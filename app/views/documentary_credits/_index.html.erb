@@ -1,6 +1,6 @@
 <div class="container mx-auto my-8 px-4">
   <div class="flex justify-between items-center mb-4">
-    <h1 class="h3">Documentary Credits</h1>
+    <h1 class="h3">My Documentary Credits</h1>
 
     <% if @documentary_credits.exists? %>
       <%= link_to 'New Documentary Credit', new_documentary_credit_path, class: "btn btn-primary" %>
@@ -38,6 +38,9 @@
                       <td class="p-3"><%= documentary_credit.latest_shipment_date %></td>
             <td>
               <%= link_to "View", documentary_credit, class: "btn btn-link no-underline" %>
+            </td>
+            <td>
+              <%= link_to "NewDocument", new_documentary_credit_document_path(documentary_credit.id), class: "btn btn-link no-underline" %>
             </td>
           </tr>
         <% end %>

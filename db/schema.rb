@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_140042) do
+ActiveRecord::Schema.define(version: 2019_12_18_143015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,6 +103,34 @@ ActiveRecord::Schema.define(version: 2019_12_18_140042) do
     t.text "remarks"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.string "description"
+    t.string "currency"
+    t.decimal "amount"
+    t.date "documents_date"
+    t.date "shipment_date"
+    t.string "shipment_from"
+    t.string "port_of_loading"
+    t.string "port_of_discharge"
+    t.string "final_destination"
+    t.string "incoterm"
+    t.string "goods"
+    t.string "remarks"
+    t.string "tenor"
+    t.string "consignee_name"
+    t.string "consignee_address1"
+    t.string "consignee_address2"
+    t.string "consignee_address3"
+    t.string "shipper_name"
+    t.string "shipper_address1"
+    t.string "shipper_address2"
+    t.string "shipper_address3"
+    t.bigint "documentary_credit_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["documentary_credit_id"], name: "index_documents_on_documentary_credit_id"
   end
 
   create_table "pay_charges", force: :cascade do |t|
@@ -225,6 +253,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_140042) do
   end
 
   add_foreign_key "api_tokens", "users"
+  add_foreign_key "documents", "documentary_credits"
   add_foreign_key "team_members", "teams"
   add_foreign_key "team_members", "users"
   add_foreign_key "teams", "users", column: "owner_id"

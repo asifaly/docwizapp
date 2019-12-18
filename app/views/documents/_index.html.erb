@@ -1,0 +1,63 @@
+<div class="container mx-auto my-8 px-4">
+  <div class="flex justify-between items-center mb-4">
+    <h1 class="h3">My Documents</h1>
+
+    <%# if @documents.exists? %>
+      <%# link_to 'New Document', new_documentary_credit_document_path, class: "btn btn-primary" %>
+    <%# end %>
+  </div>
+
+  <% if @documents.exists? %>
+    <div class="bg-white rounded shadow table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="p-3 uppercase text-left text-xs text-gray-700">Description</th>
+            <th class="p-3 uppercase text-left text-xs text-gray-700">Currency</th>
+            <th class="p-3 uppercase text-left text-xs text-gray-700">Amount</th>
+            <th class="p-3 uppercase text-left text-xs text-gray-700">Documents date</th>
+            <th class="p-3 uppercase text-left text-xs text-gray-700">Shipment date</th>
+            <th class="p-3 uppercase text-left text-xs text-gray-700">Consignee name</th>
+            <th class="p-3 uppercase text-left text-xs text-gray-700">Shipper name</th>
+            <th class="p-3 uppercase text-left text-xs text-gray-700">Documentary credit</th>
+            <th class="p-3 uppercase text-left text-xs text-gray-700 w-20">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <% @documents.each do |document| %>
+          <tr class="group border-t border-gray-400 hover:bg-gray-100">
+                      <td class="p-3"><%= document.description %></td>
+                      <td class="p-3"><%= document.currency %></td>
+                      <td class="p-3"><%= document.amount %></td>
+                      <td class="p-3"><%= document.documents_date %></td>
+                      <td class="p-3"><%= document.shipment_date %></td>
+                      <td class="p-3"><%= document.consignee_name %></td>
+                      <td class="p-3"><%= document.shipper_name %></td>
+                      <td class="p-3"><%= document.documentary_credit_id %></td>
+          
+            <td>
+              <%= link_to "View", document_path(document), class: "btn btn-link no-underline" %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <% if @pagy.pages > 1 %>
+      <div class="text-center my-6">
+        <%== pagy_nav(@pagy) %>
+      </div>
+    <% end %>
+
+  <% else %>
+    <div class="bg-white rounded shadow flex flex-col items-center justify-between p-8 lg:flex-row">
+      <%= image_tag "empty.svg", class: "mb-4 lg:w-1/2" %>
+      <div class="flex-1 text-center">
+        <p class="h3 mb-4">Create your first Document</p>
+        <%= link_to 'New Document', new_documentary_credit_document_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

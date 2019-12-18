@@ -1,7 +1,11 @@
  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
 
-  resources :documentary_credits
+  resources :documentary_credits do
+    resources :documents, only: [:create, :new]
+  end
+  resources :documents, only: [:index, :edit, :update, :destroy, :show]
+
   # Jumpstart views
   if Rails.env.development? || Rails.env.test?
     mount Jumpstart::Engine, at: '/jumpstart'

@@ -1,0 +1,99 @@
+<div class="container mx-auto my-8 px-4">
+  <div class="max-w-2xl mx-auto">
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="h3"><%= link_to 'Documents', documents_path %> > Document #<%= @document.id %></h1>
+      <%= link_to 'Edit', edit_document_path(@document), class: "btn btn-link" %>
+    </div>
+
+    <div class="bg-white rounded shadow p-8">
+            <div class="mb-4">
+        <h5>Description</h5>
+        <%= @document.description %>
+      </div>
+            <div class="mb-4">
+        <h5>Currency</h5>
+        <%= @document.currency %>
+      </div>
+            <div class="mb-4">
+        <h5>Amount</h5>
+        <%= @document.amount %>
+      </div>
+            <div class="mb-4">
+        <h5>Documents date</h5>
+        <%= @document.documents_date %>
+      </div>
+            <div class="mb-4">
+        <h5>Shipment date</h5>
+        <%= @document.shipment_date %>
+      </div>
+            <div class="mb-4">
+        <h5>Shipment from</h5>
+        <%= @document.shipment_from %>
+      </div>
+            <div class="mb-4">
+        <h5>Port of loading</h5>
+        <%= @document.port_of_loading %>
+      </div>
+            <div class="mb-4">
+        <h5>Port of discharge</h5>
+        <%= @document.port_of_discharge %>
+      </div>
+            <div class="mb-4">
+        <h5>Final destination</h5>
+        <%= @document.final_destination %>
+      </div>
+            <div class="mb-4">
+        <h5>Incoterm</h5>
+        <%= @document.incoterm %>
+      </div>
+            <div class="mb-4">
+        <h5>Goods</h5>
+        <%= @document.goods %>
+      </div>
+            <div class="mb-4">
+        <h5>Remarks</h5>
+        <%= @document.remarks %>
+      </div>
+            <div class="mb-4">
+        <h5>Tenor</h5>
+        <%= @document.tenor %>
+      </div>
+            <div class="mb-4">
+        <h5>Consignee name</h5>
+        <%= @document.consignee_name %>
+      </div>
+            <div class="mb-4">
+        <h5>Consignee address1</h5>
+        <%= @document.consignee_address1 %>
+      </div>
+            <div class="mb-4">
+        <h5>Consignee address2</h5>
+        <%= @document.consignee_address2 %>
+      </div>
+            <div class="mb-4">
+        <h5>Consignee address3</h5>
+        <%= @document.consignee_address3 %>
+      </div>
+            <div class="mb-4">
+        <h5>Shipper name</h5>
+        <%= @document.shipper_name %>
+      </div>
+            <div class="mb-4">
+        <h5>Shipper address1</h5>
+        <%= @document.shipper_address1 %>
+      </div>
+            <div class="mb-4">
+        <h5>Shipper address2</h5>
+        <%= @document.shipper_address2 %>
+      </div>
+            <div class="mb-4">
+        <h5>Shipper address3</h5>
+        <%= @document.shipper_address3 %>
+      </div>
+            <div class="mb-4">
+        <h5>Documentary credit</h5>
+        <%= @document.documentary_credit %>
+      </div>
+          </div>
+  </div>
+</div>

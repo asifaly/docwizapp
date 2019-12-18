@@ -1,0 +1,121 @@
+<%= form_with(model: [@documentary_credit, document]) do |form| %>
+  <%= render "shared/error_messages", resource: form.object %>
+
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_field :description, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :currency %>
+    <%= form.text_field :currency, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :amount %>
+    <%= form.text_field :amount, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :documents_date %>
+    <%= form.date_select :documents_date, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :shipment_date %>
+    <%= form.date_select :shipment_date, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :shipment_from %>
+    <%= form.text_field :shipment_from, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :port_of_loading %>
+    <%= form.text_field :port_of_loading, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :port_of_discharge %>
+    <%= form.text_field :port_of_discharge, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :final_destination %>
+    <%= form.text_field :final_destination, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :incoterm %>
+    <%= form.text_field :incoterm, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :goods %>
+    <%= form.text_field :goods, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :remarks %>
+    <%= form.text_field :remarks, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :tenor %>
+    <%= form.text_field :tenor, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :consignee_name %>
+    <%= form.text_field :consignee_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :consignee_address1 %>
+    <%= form.text_field :consignee_address1, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :consignee_address2 %>
+    <%= form.text_field :consignee_address2, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :consignee_address3 %>
+    <%= form.text_field :consignee_address3, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :shipper_name %>
+    <%= form.text_field :shipper_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :shipper_address1 %>
+    <%= form.text_field :shipper_address1, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :shipper_address2 %>
+    <%= form.text_field :shipper_address2, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :shipper_address3 %>
+    <%= form.text_field :shipper_address3, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :documentary_credit_id %>
+    <%= form.text_field :documentary_credit_id, class: "form-control" %>
+  </div>
+
+  <div class="form-group flex justify-between">
+    <%= form.button class: "btn btn-primary" %>
+
+    <% if form.object.persisted? %>
+      <%= link_to 'Delete', form.object, class: "btn btn-danger outline", method: :delete, data: { remote: true, confirm: "Are you sure?" } %>
+    <% end %>
+  </div>
+<% end %>
