@@ -1,0 +1,12 @@
+--- !ruby/object:Jumpstart::Configuration
+application_name: DocWiz
+business_name: DocWiz Company, LLC
+domain: example.com
+support_email: support@docwiz.com
+default_from_email: Jumpstart <support@example.com>
+business_address: |-
+  8th Floor, Purva Primus,
+  Thoraipakkam,
+  Chennai, India
+background_job_processor: async
+email_provider: ''
