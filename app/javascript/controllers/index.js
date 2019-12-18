@@ -9,6 +9,9 @@ const context = require.context("controllers", true, /_controller\.js$/)
 application.load(definitionsFromContext(context))
 
 import { Dropdown, Modal, Tabs } from "tailwindcss-stimulus-components"
+import Flatpickr from "stimulus-flatpickr"
+import "flatpickr/dist/themes/light.css";
 application.register('dropdown', Dropdown)
 application.register('modal', Modal)
 application.register('tabs', Tabs)
+application.register('flatpickr', Flatpickr)
