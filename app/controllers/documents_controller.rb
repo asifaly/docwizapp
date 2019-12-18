@@ -9,6 +9,43 @@ class DocumentsController < ApplicationController
 
   # GET /documents/1
   def show
+    require 'monkeylearn'
+
+    Monkeylearn.configure do |c|
+      c.token = '91929109e71dac35d8b018a3d55cc0e1bc02462e'
+    end
+
+    data = [@document.documentary_credit.documents_required]
+    model_id = 'ex_imBxq77y'
+    result = Monkeylearn.extractors.extract(model_id, data)
+    keys_to_extract = ["extracted_text"]
+    @invoice = ""
+    @pl = ""
+    @condition = ""
+    @thirdparty = ""
+    result.body.first["extractions"].map do |w|
+      w.select do |k,v| 
+        if keys_to_extract.include? k
+          if v.downcase.include? "invoice"
+            @invoice = v
+          elsif v.downcase.include? "packing"
+            @pl = v
+          elsif v.downcase.include? "weight"
+            @pl = v
+          elsif v.downcase.include? "certified"
+            @thirdparty = v
+          elsif v.downcase.include? "stating"
+            @condition = v
+          end
+        end
+      end
+    end
+    puts @invoice
+    puts @pl
+      # keys_to_extract = [:tag_name, :extracted_text]
+      # x.each do |key, value|
+      # puts "key is #{key} and value is #{value}"
+      # end
     respond_to do |format|
       format.html
       format.pdf do

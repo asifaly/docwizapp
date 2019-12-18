@@ -1,5 +1,14 @@
+
+
+
+
+<% unless @invoice.to_s.strip.empty? %>
 <%= render 'invoice', document: @document %>
+<% end %>
 
+<% unless @invoice.to_s.strip.empty? && @pl.to_s.strip.empty? %>
 <div class="alwaysbreak"></div>
-
+<% end %>
+<% unless @pl.to_s.strip.empty? %>
 <%= render 'packinglist', document: @document %>
+<% end %>
