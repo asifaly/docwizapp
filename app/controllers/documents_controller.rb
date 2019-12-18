@@ -9,6 +9,15 @@ class DocumentsController < ApplicationController
 
   # GET /documents/1
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "document",
+        template: "documents/prep.html.erb",
+        layout: 'pdf.html',
+        page_size: 'A4'
+      end
+    end
   end
 
   # GET /documents/new
