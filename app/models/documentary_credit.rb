@@ -1,0 +1,2 @@
+class DocumentaryCredit < ApplicationRecord
+end

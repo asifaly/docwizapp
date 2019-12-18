@@ -1,0 +1,139 @@
+<div class="container mx-auto my-8 px-4">
+  <div class="max-w-2xl mx-auto">
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="h3"><%= link_to 'Documentary Credits', documentary_credits_path %> > Documentary Credit #<%= @documentary_credit.id %></h1>
+      <%= link_to 'Edit', edit_documentary_credit_path(@documentary_credit), class: "btn btn-link" %>
+    </div>
+
+    <div class="bg-white rounded shadow p-8">
+            <div class="mb-4">
+        <h5>Lc number</h5>
+        <%= @documentary_credit.lc_number %>
+      </div>
+            <div class="mb-4">
+        <h5>Issue date</h5>
+        <%= @documentary_credit.issue_date %>
+      </div>
+            <div class="mb-4">
+        <h5>Expiry date</h5>
+        <%= @documentary_credit.expiry_date %>
+      </div>
+            <div class="mb-4">
+        <h5>Currency</h5>
+        <%= @documentary_credit.currency %>
+      </div>
+            <div class="mb-4">
+        <h5>Lc amount</h5>
+        <%= @documentary_credit.lc_amount %>
+      </div>
+            <div class="mb-4">
+        <h5>Applicant name</h5>
+        <%= @documentary_credit.applicant_name %>
+      </div>
+            <div class="mb-4">
+        <h5>Applicant address1</h5>
+        <%= @documentary_credit.applicant_address1 %>
+      </div>
+            <div class="mb-4">
+        <h5>Applicant address2</h5>
+        <%= @documentary_credit.applicant_address2 %>
+      </div>
+            <div class="mb-4">
+        <h5>Applicant address3</h5>
+        <%= @documentary_credit.applicant_address3 %>
+      </div>
+            <div class="mb-4">
+        <h5>Beneficiary name</h5>
+        <%= @documentary_credit.beneficiary_name %>
+      </div>
+            <div class="mb-4">
+        <h5>Beneficiary address1</h5>
+        <%= @documentary_credit.beneficiary_address1 %>
+      </div>
+            <div class="mb-4">
+        <h5>Beneficiary address2</h5>
+        <%= @documentary_credit.beneficiary_address2 %>
+      </div>
+            <div class="mb-4">
+        <h5>Beneficiary address3</h5>
+        <%= @documentary_credit.beneficiary_address3 %>
+      </div>
+            <div class="mb-4">
+        <h5>Issuing bank name</h5>
+        <%= @documentary_credit.issuing_bank_name %>
+      </div>
+            <div class="mb-4">
+        <h5>Issuing bank address1</h5>
+        <%= @documentary_credit.issuing_bank_address1 %>
+      </div>
+            <div class="mb-4">
+        <h5>Issuing bank address2</h5>
+        <%= @documentary_credit.issuing_bank_address2 %>
+      </div>
+            <div class="mb-4">
+        <h5>Issuing bank address3</h5>
+        <%= @documentary_credit.issuing_bank_address3 %>
+      </div>
+            <div class="mb-4">
+        <h5>Tenor</h5>
+        <%= @documentary_credit.tenor %>
+      </div>
+            <div class="mb-4">
+        <h5>Shipment from</h5>
+        <%= @documentary_credit.shipment_from %>
+      </div>
+            <div class="mb-4">
+        <h5>Port of loading</h5>
+        <%= @documentary_credit.port_of_loading %>
+      </div>
+            <div class="mb-4">
+        <h5>Port of discharge</h5>
+        <%= @documentary_credit.port_of_discharge %>
+      </div>
+            <div class="mb-4">
+        <h5>Final destination</h5>
+        <%= @documentary_credit.final_destination %>
+      </div>
+            <div class="mb-4">
+        <h5>Latest shipment date</h5>
+        <%= @documentary_credit.latest_shipment_date %>
+      </div>
+            <div class="mb-4">
+        <h5>Partial shipment</h5>
+        <%= @documentary_credit.partial_shipment %>
+      </div>
+            <div class="mb-4">
+        <h5>Transhipment</h5>
+        <%= @documentary_credit.transhipment %>
+      </div>
+            <div class="mb-4">
+        <h5>Goods description</h5>
+        <%= @documentary_credit.goods_description %>
+      </div>
+            <div class="mb-4">
+        <h5>Documents required</h5>
+        <%= @documentary_credit.documents_required %>
+      </div>
+            <div class="mb-4">
+        <h5>Additional conditions</h5>
+        <%= @documentary_credit.additional_conditions %>
+      </div>
+            <div class="mb-4">
+        <h5>Drawee</h5>
+        <%= @documentary_credit.drawee %>
+      </div>
+            <div class="mb-4">
+        <h5>Available with</h5>
+        <%= @documentary_credit.available_with %>
+      </div>
+            <div class="mb-4">
+        <h5>Available by</h5>
+        <%= @documentary_credit.available_by %>
+      </div>
+            <div class="mb-4">
+        <h5>Remarks</h5>
+        <%= @documentary_credit.remarks %>
+      </div>
+          </div>
+  </div>
+</div>
